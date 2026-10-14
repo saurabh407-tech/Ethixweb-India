@@ -5,9 +5,9 @@ import { triggerParticleBurst } from '../../utils/particleEffect';
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden pt-8 pb-20 sm:pt-14 sm:pb-28 lg:pt-20 lg:pb-32 bg-charcoal-950 text-white">
-      {/* Subtle Spiderweb Vector & Ambient Glow */}
-      <div className="absolute inset-0 pointer-events-none flex items-center justify-center opacity-25 select-none overflow-hidden">
+    <section className="relative overflow-hidden pt-2 pb-16 sm:pt-4 sm:pb-20 lg:pt-6 lg:pb-28 bg-charcoal-950 text-white">
+      {/* Subtle Spiderweb Vector & Ambient Glow Attached Under Navbar */}
+      <div className="absolute inset-x-0 -top-8 pointer-events-none flex items-start justify-center opacity-35 select-none overflow-hidden h-[650px]">
         <img
           src="/assets/spiderweb.svg"
           alt=""
@@ -15,16 +15,16 @@ export default function Hero() {
           height="600"
           aria-hidden="true"
           decoding="async"
-          className="w-full max-w-6xl h-auto object-contain transform scale-110 lg:scale-125"
+          className="w-full max-w-6xl h-auto object-contain object-top transform scale-105 sm:scale-115 lg:scale-125"
           onError={(e) => {
             e.target.style.display = 'none';
           }}
         />
       </div>
 
-      {/* Radial crimson glow at top center */}
+      {/* Radial crimson glow at top center right below navbar */}
       <div
-        className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 h-96 w-[36rem] rounded-full bg-brand-500/15 blur-[140px] opacity-70"
+        className="pointer-events-none absolute left-1/2 -top-20 -translate-x-1/2 h-[26rem] w-[42rem] rounded-full bg-brand-500/25 blur-[130px] opacity-80"
         aria-hidden="true"
       />
 
@@ -85,8 +85,20 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Column: Editorial Studio Card */}
-          <div className="lg:col-span-5 relative flex justify-center">
+          {/* Right Column: Editorial Studio Card with Floating Proof Badges */}
+          <div className="lg:col-span-5 relative flex flex-col items-center justify-center">
+            {/* Signature Floating Badges (Authentic Ethixweb Style) */}
+            <div className="w-full max-w-md flex items-center justify-between gap-3 mb-3 px-2">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-charcoal-900/90 backdrop-blur-md border border-charcoal-800 text-[11px] font-medium text-charcoal-300 shadow-lg">
+                <span className="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+                <span>More booked jobs</span>
+              </div>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-charcoal-900/90 backdrop-blur-md border border-charcoal-800 text-[11px] font-medium text-charcoal-300 shadow-lg">
+                <span className="text-brand-400 font-bold">↗</span>
+                <span>More conversions</span>
+              </div>
+            </div>
+
             <div className="w-full max-w-md studio-card rounded-3xl p-7 relative overflow-hidden">
               <div className="flex items-center justify-between pb-4 border-b border-white/[0.08]">
                 <div className="flex items-center gap-2">

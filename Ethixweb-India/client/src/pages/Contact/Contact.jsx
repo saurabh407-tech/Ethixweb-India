@@ -12,7 +12,7 @@ export default function Contact() {
   return (
     <div className="bg-charcoal-950 text-white min-h-screen">
       {/* Page Header */}
-      <section className="pt-12 sm:pt-20 pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+      <section className="pt-3 sm:pt-6 pb-12 sm:pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/30 text-xs font-semibold text-brand-400 mb-4">
           <span className="w-1.5 h-1.5 rounded-full bg-brand-500 animate-pulse" />
           <span>Direct Technical Scoping</span>

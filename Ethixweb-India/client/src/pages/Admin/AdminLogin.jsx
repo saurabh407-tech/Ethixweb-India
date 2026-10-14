@@ -57,7 +57,7 @@ export default function AdminLogin() {
   };
 
   return (
-    <div className="min-h-[85vh] flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8 bg-charcoal-950 text-white">
+    <div className="min-h-[80vh] flex items-center justify-center py-6 sm:py-10 px-4 sm:px-6 lg:px-8 bg-charcoal-950 text-white">
       <div className="max-w-md w-full">
         {/* Card Header */}
         <div className="text-center mb-8">

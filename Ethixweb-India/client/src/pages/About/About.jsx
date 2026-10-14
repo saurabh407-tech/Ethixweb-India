@@ -12,7 +12,7 @@ export default function About() {
   return (
     <div className="bg-charcoal-950 text-white min-h-screen">
       {/* Editorial Main Section — Story & Studio */}
-      <section className="pt-12 sm:pt-20 pb-20 sm:pb-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="pt-3 sm:pt-6 pb-20 sm:pb-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: Authentic Team Studio Image */}
           <div className="lg:col-span-6">

@@ -145,7 +145,7 @@ export default function Services() {
   return (
     <div className="bg-charcoal-950 text-white min-h-screen">
       {/* Page Header */}
-      <section className="py-20 sm:py-28 border-b border-charcoal-850 relative overflow-hidden">
+      <section className="pt-4 pb-14 sm:pt-6 sm:pb-16 border-b border-charcoal-850 relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-72 bg-brand-500/10 blur-[130px] pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-3xl">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/30 text-xs font-semibold text-brand-400 mb-4">

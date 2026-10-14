@@ -178,7 +178,7 @@ export default function AdminDashboard() {
   return (
     <div className="min-h-screen bg-charcoal-950 text-white pb-20">
       {/* Top Header */}
-      <div className="bg-charcoal-900 border-b border-charcoal-800 sticky top-16 z-40">
+      <div className="bg-charcoal-900 border-b border-charcoal-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-charcoal-950 border border-charcoal-800 flex items-center justify-center text-brand-500">

@@ -7,7 +7,7 @@ export default function PageLayout() {
   return (
     <div className="flex flex-col min-h-screen bg-charcoal-950 text-white selection:bg-brand-500 selection:text-white">
       <Navbar />
-      <main className="flex-1 pt-24 sm:pt-28">
+      <main className="flex-1">
         <Outlet />
       </main>
       <Footer />
