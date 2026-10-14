@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Send, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
 import leadService from '../../services/leadService';
+import { triggerParticleBurst } from '../../utils/particleEffect';
 
 const AVAILABLE_SERVICES = [
   'Websites & Digital Portals',
@@ -344,7 +345,8 @@ export default function EnquiryForm({
         <button
           type="submit"
           disabled={loading}
-          className="w-full py-4 px-6 rounded-xl font-bold uppercase tracking-wider text-xs text-white bg-brand-500 hover:bg-brand-600 shadow-xl shadow-brand-500/25 transition-all flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed hover:scale-[1.01] active:scale-[0.99]"
+          onClick={triggerParticleBurst}
+          className="relative overflow-hidden w-full py-4 px-6 rounded-xl font-bold uppercase tracking-wider text-xs text-white bg-brand-500 hover:bg-brand-600 shadow-xl shadow-brand-500/25 transition-all flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed active:scale-[0.99]"
         >
           {loading ? (
             <>
