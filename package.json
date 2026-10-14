@@ -6,11 +6,23 @@
   "scripts": {
     "start": "npm run start --prefix Ethixweb-India/server",
     "build": "npm install --prefix Ethixweb-India/server",
+    "postinstall": "npm install --prefix Ethixweb-India/server",
     "install:all": "npm install --prefix Ethixweb-India/client && npm install --prefix Ethixweb-India/server",
     "dev:server": "npm run dev --prefix Ethixweb-India/server",
     "dev:client": "npm run dev --prefix Ethixweb-India/client",
     "start:server": "npm run start --prefix Ethixweb-India/server",
     "seed": "npm run seed --prefix Ethixweb-India/server",
     "build:client": "npm run build --prefix Ethixweb-India/client"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.9.5"
   }
 }
