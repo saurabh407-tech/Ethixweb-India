@@ -42,3 +42,22 @@ npm run seed
 ### 4. Run Development Servers
 - Server: `npm run dev` in `server` (runs on http://localhost:5000)
 - Client: `npm run dev` in `client` (runs on http://localhost:5173)
+
+### 5. Run Automated Tests
+```bash
+cd server
+npm test
+```
+Executes all 13 comprehensive backend security, validation, honeypot, authentication, and CRM workflow tests.
+
+### 6. Production Build & Preview
+```bash
+cd client
+npm run build
+npm run preview
+```
+
+## Deployment Blueprints
+- **Client (Vercel)**: Configured with `client/vercel.json` for SPA routing fallback. Set `VITE_API_BASE_URL` to your production Render API URL.
+- **Server (Render)**: Configured with `render.yaml`. Set `MONGODB_URI`, `JWT_SECRET`, and `CLIENT_URL` environment variables.
+- See detailed instructions in [docs/deployment-guide.md](docs/deployment-guide.md).
