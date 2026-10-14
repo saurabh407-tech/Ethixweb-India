@@ -81,6 +81,11 @@ app.use('/api/auth', authRoutes);
 app.use('/api/leads', leadRoutes);
 app.use('/api/admin', adminRoutes);
 
+// Resilient fallback mounts if client omitted /api in VITE_API_BASE_URL
+app.use('/auth', authRoutes);
+app.use('/leads', leadRoutes);
+app.use('/admin', adminRoutes);
+
 // Catch-all 404 Route
 app.use((req, res, next) => {
   next(new ApiError(404, `Endpoint ${req.originalUrl} not found on this server.`));
