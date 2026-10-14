@@ -38,7 +38,19 @@ export default function AdminLogin() {
       await authService.login(email, password);
       navigate('/admin/dashboard');
     } catch (err) {
-      setError(err.message || 'Login failed. Please check your credentials.');
+      const msg = err.message || '';
+      if (
+        msg.includes('Failed to fetch') ||
+        msg.includes('NetworkError') ||
+        msg.includes('502') ||
+        msg.includes('504')
+      ) {
+        setError(
+          'Connecting to server... The Render free-tier backend is waking up from sleep (~30-50s). Please wait a moment and try clicking Sign In again.'
+        );
+      } else {
+        setError(msg || 'Login failed. Please check your credentials.');
+      }
     } finally {
       setLoading(false);
     }

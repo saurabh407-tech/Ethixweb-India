@@ -1,4 +1,17 @@
-let rawBaseUrl = (import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api').trim();
+const isClientProduction =
+  typeof window !== 'undefined' &&
+  !['localhost', '127.0.0.1'].includes(window.location.hostname);
+
+let configuredUrl = (import.meta.env.VITE_API_BASE_URL || '').trim();
+
+// When running on a live domain (like *.vercel.app) and no remote URL is provided (or mistakenly pointing to localhost), fallback to live Render backend
+if (isClientProduction && (!configuredUrl || configuredUrl.includes('localhost') || configuredUrl.includes('127.0.0.1'))) {
+  configuredUrl = 'https://ethixweb-india-api.onrender.com/api';
+} else if (!configuredUrl) {
+  configuredUrl = 'http://localhost:5000/api';
+}
+
+let rawBaseUrl = configuredUrl;
 if (!rawBaseUrl.endsWith('/api') && !rawBaseUrl.endsWith('/api/')) {
   rawBaseUrl = `${rawBaseUrl.replace(/\/+$/, '')}/api`;
 }

@@ -3,6 +3,7 @@ dotenv.config();
 
 import app from './app.js';
 import { connectDB } from './config/database.js';
+import { autoSeedAdmin } from './config/seed.js';
 
 const PORT = process.env.PORT || 5000;
 
@@ -10,6 +11,7 @@ const PORT = process.env.PORT || 5000;
 const startServer = async () => {
   try {
     await connectDB();
+    await autoSeedAdmin();
     const server = app.listen(PORT, () => {
       console.log(`[Server] Ethixweb Backend running in ${process.env.NODE_ENV || 'development'} mode on port ${PORT}`);
       console.log(`[Server] Health check: http://localhost:${PORT}/api/health`);

@@ -16,7 +16,7 @@ const seedDatabase = async () => {
     const adminPassword = process.env.ADMIN_PASSWORD || 'AdminPassword@123';
     const adminName = process.env.ADMIN_NAME || 'Ethixweb Administrator';
 
-    let admin = await Admin.findOne({ email: adminEmail });
+    let admin = await Admin.findOne({ email: adminEmail }).select('+password');
     if (!admin) {
       admin = new Admin({
         name: adminName,
@@ -29,7 +29,14 @@ const seedDatabase = async () => {
       console.log(`       Email:    ${adminEmail}`);
       console.log(`       Password: ${adminPassword}`);
     } else {
-      console.log(`[Seed] Administrator account (${adminEmail}) is already configured.`);
+      const isMatch = await admin.comparePassword(adminPassword);
+      if (!isMatch) {
+        admin.password = adminPassword;
+        await admin.save();
+        console.log(`[Seed] Updated password for administrator (${adminEmail}) to match environment settings.`);
+      } else {
+        console.log(`[Seed] Administrator account (${adminEmail}) is already configured with matching password.`);
+      }
     }
 
     // Seed initial leads if the database collection is empty
