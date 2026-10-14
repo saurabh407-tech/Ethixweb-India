@@ -39,10 +39,35 @@
   }
 
   .text-glow-brand {
-    text-shadow: 0 0 20px rgba(229, 29, 37, 0.45);
+    text-shadow: 0 0 24px rgba(229, 29, 37, 0.4);
   }
   
   .box-glow-brand {
-    box-shadow: 0 0 35px -5px rgba(229, 29, 37, 0.25);
+    box-shadow: 0 10px 40px -10px rgba(229, 29, 37, 0.2);
+  }
+
+  /* Soft Studio Card Surface */
+  .studio-card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .studio-card:hover {
+    border-color: rgba(229, 29, 37, 0.35);
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px -15px rgba(229, 29, 37, 0.12);
+  }
+
+  /* Soft Ambient Pulse */
+  @keyframes softPulse {
+    0%, 100% { opacity: 0.12; transform: scale(1); }
+    50% { opacity: 0.2; transform: scale(1.04); }
+  }
+
+  .animate-soft-pulse {
+    animation: softPulse 8s ease-in-out infinite;
   }
 }
+

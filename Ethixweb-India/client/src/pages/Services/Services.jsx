@@ -162,20 +162,20 @@ export default function Services() {
       </section>
 
       {/* Services List */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {DETAILED_SERVICES.map((srv, idx) => {
           const Icon = srv.icon;
           return (
             <div
               key={srv.id}
               id={srv.id}
-              className="rounded-3xl bg-charcoal-900 border border-charcoal-800 p-8 sm:p-12 transition-all hover:border-brand-500/30"
+              className="studio-card rounded-3xl p-8 sm:p-12 transition-all"
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
                 {/* Left: Service Overview & Practical Outcomes */}
                 <div className="lg:col-span-7 space-y-6">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-charcoal-950 border border-charcoal-800 text-brand-500 flex items-center justify-center shrink-0">
+                    <div className="w-12 h-12 rounded-2xl bg-white/[0.04] border border-white/[0.08] text-brand-500 flex items-center justify-center shrink-0">
                       <Icon className="w-6 h-6" />
                     </div>
                     <div>
@@ -188,15 +188,15 @@ export default function Services() {
                     </div>
                   </div>
 
-                  <p className="text-sm sm:text-base text-charcoal-300 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-charcoal-300 leading-relaxed">
                     {srv.overview}
                   </p>
 
                   {/* Measurable Outcomes for Indian Businesses */}
                   <div className="pt-2">
-                    <h3 className="text-xs font-bold uppercase tracking-wider text-charcoal-400 mb-3 flex items-center gap-2">
-                      <Zap className="w-3.5 h-3.5 text-brand-500" />
-                      Practical Outcomes for Growing Businesses:
+                    <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-brand-500 mb-3 flex items-center gap-2">
+                      <Zap className="w-3.5 h-3.5" />
+                      Practical Outcomes:
                     </h3>
                     <div className="space-y-2.5">
                       {srv.outcomes.map((out, oIdx) => (
@@ -210,11 +210,11 @@ export default function Services() {
                 </div>
 
                 {/* Right: Deliverables Box & CTA */}
-                <div className="lg:col-span-5 flex flex-col justify-between p-6 sm:p-8 rounded-2xl bg-charcoal-950 border border-charcoal-800">
+                <div className="lg:col-span-5 flex flex-col justify-between p-6 sm:p-8 rounded-3xl bg-white/[0.02] border border-white/[0.08]">
                   <div>
-                    <h4 className="text-xs font-bold uppercase tracking-widest text-charcoal-400 mb-4 flex items-center gap-2">
+                    <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-charcoal-400 mb-4 flex items-center gap-2">
                       <ShieldCheck className="w-4 h-4 text-brand-500" />
-                      Standard Milestone Deliverables:
+                      Milestone Deliverables:
                     </h4>
                     <ul className="space-y-2.5">
                       {srv.deliverables.map((item, dIdx) => (
@@ -226,10 +226,10 @@ export default function Services() {
                     </ul>
                   </div>
 
-                  <div className="pt-8 mt-6 border-t border-charcoal-850">
+                  <div className="pt-8 mt-6 border-t border-white/[0.06]">
                     <Link
                       to="/contact"
-                      className="inline-flex items-center justify-center w-full gap-2 px-5 py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider text-white bg-brand-500 hover:bg-brand-600 shadow-md transition-all"
+                      className="inline-flex items-center justify-center w-full gap-2 px-6 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-brand-500 hover:bg-brand-600 shadow-xl shadow-brand-500/20 transition-all active:scale-95"
                     >
                       <span>Inquire About This Service</span>
                       <ArrowUpRight className="w-4 h-4" />

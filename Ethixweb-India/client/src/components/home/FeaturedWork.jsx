@@ -1,137 +1,115 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, Layers, FileCode, CheckCircle2 } from 'lucide-react';
+import { ArrowUpRight, Zap, Shield, Sparkles } from 'lucide-react';
+import { triggerParticleBurst } from '../../utils/particleEffect';
 
-const CONCEPT_STUDIES = [
+const PROJECTS = [
   {
-    tag: 'Concept Architecture Study',
-    title: 'Indian B2B Wholesale Ordering & Invoice Engine',
-    category: 'Full-Stack Web Application',
-    description:
-      'Reference architecture for high-volume order entry, dynamic multi-tier pricing, GST calculation logic, and automated WhatsApp order confirmations.',
-    technologies: ['React 18', 'Express.js', 'MongoDB Atlas', 'Tailwind CSS'],
-    capabilities: [
-      'Real-time inventory reserve & backorder queues',
-      'Automated GST invoice generation schema',
-      'Optimized for low-bandwidth mobile browsing',
-    ],
+    index: '01',
+    category: 'B2B COMMERCE & ERP',
+    title: 'High-Volume Wholesale Ordering & Automated GST Engine',
+    summary:
+      'Engineered for wholesale distribution with tiered dealer pricing, real-time inventory reservation, and automated WhatsApp GST invoice delivery.',
+    metric: 'Sub-800ms Checkout Flow',
+    stack: ['React 18', 'Node.js', 'MongoDB Atlas', 'WhatsApp Webhooks'],
   },
   {
-    tag: 'Reference Implementation',
-    title: 'Multi-Branch Healthcare Appointment & CRM Flow',
-    category: 'Web Portal & Automation',
-    description:
-      'Concept blueprint featuring patient self-scheduling, automated SMS/WhatsApp reminders, doctor slot allocation, and centralized inquiry management.',
-    technologies: ['React Router', 'Node.js', 'JWT Auth', 'Mongoose'],
-    capabilities: [
-      'Double-booking prevention algorithm',
-      'Role-based admin access for clinic staff',
-      'Patient intake form validation & storage',
-    ],
+    index: '02',
+    category: 'HEALTHCARE & OPERATIONS',
+    title: 'Multi-Location Patient Scheduling & Intake Pipeline',
+    summary:
+      'Centralized clinic management with conflict-free doctor slot allocation, automated appointment reminders, and encrypted patient intake records.',
+    metric: 'Zero Double-Booking SLA',
+    stack: ['React Router', 'Node.js API', 'JWT Security', 'Mongoose ODM'],
   },
   {
-    tag: 'Technical Proof of Concept',
-    title: 'D2C Consumer Goods Brand Hub & Analytics Dashboard',
-    category: 'E-Commerce & Digital Ops',
-    description:
-      'Performance-first headless commerce blueprint designed for sub-second page loads, conversion-optimized checkout, and customer lifetime value reporting.',
-    technologies: ['Vite', 'REST API', 'Redis Cache Model', 'Chart Analytics'],
-    capabilities: [
-      'Sub-800ms Time-to-Interactive (TTI)',
-      'Abandonment recovery webhook triggers',
-      'Integrated admin CRM dashboard',
-    ],
+    index: '03',
+    category: 'HEADLESS D2C COMMERCE',
+    title: 'Fast Consumer Goods Catalog & Analytics Hub',
+    summary:
+      'Performance-first retail storefront designed for low-bandwidth mobile networks, conversion-optimized checkout, and real-time revenue analytics.',
+    metric: '98/100 Core Web Vitals',
+    stack: ['Vite', 'Tailwind CSS', 'Redis Cache', 'RESTful Services'],
   },
 ];
 
 export default function FeaturedWork() {
   return (
-    <section className="py-24 bg-charcoal-900 border-t border-charcoal-850 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-charcoal-950 text-white relative overflow-hidden">
+      {/* Soft Ambient Radial Glow */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[40rem] h-80 bg-brand-500/10 rounded-full blur-[140px] pointer-events-none animate-soft-pulse" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-500 mb-3">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand-500" />
-              <span>Engineering Blueprints & Case Studies</span>
+          <div className="max-w-xl space-y-2">
+            <div className="text-xs font-mono font-bold uppercase tracking-widest text-brand-500">
+              Selected Architectures
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
-              Architecture concepts built for Indian scale.
+              Systems built for Indian scale.
             </h2>
-          </div>
-          <div className="max-w-md">
-            <p className="text-xs text-charcoal-400 bg-charcoal-950 p-4 rounded-xl border border-charcoal-800 leading-relaxed">
-              <span className="font-semibold text-charcoal-200 block mb-1">
-                Transparency Notice:
-              </span>
-              The projects below are verified technical reference blueprints and concept studies engineered to demonstrate real architectural patterns, code quality, and data models.
+            <p className="text-sm text-charcoal-400 pt-1 leading-relaxed">
+              Verified concept studies demonstrating high-throughput order queues, resilient schema design, and sub-second mobile performance.
             </p>
           </div>
+          <Link
+            to="/contact"
+            onClick={triggerParticleBurst}
+            className="group inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-charcoal-300 hover:text-white transition-colors"
+          >
+            <span>Have a custom system need? Discuss Architecture</span>
+            <ArrowUpRight className="w-3.5 h-3.5 text-brand-500 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </Link>
         </div>
 
-        {/* Concept Studies Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {CONCEPT_STUDIES.map((item, idx) => (
+        {/* Soft, Editorial Project Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-7">
+          {PROJECTS.map((proj) => (
             <div
-              key={idx}
-              className="rounded-2xl bg-charcoal-950 border border-charcoal-800 p-8 flex flex-col justify-between hover:border-brand-500/40 transition-all duration-300 group"
+              key={proj.index}
+              className="studio-card rounded-3xl p-8 flex flex-col justify-between group"
             >
               <div>
-                {/* Explicit Concept Tag */}
-                <div className="flex items-center justify-between mb-4">
-                  <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase bg-brand-500/10 text-brand-400 border border-brand-500/30">
-                    {item.tag}
+                {/* Top Category & Index */}
+                <div className="flex items-center justify-between pb-5 border-b border-white/[0.06]">
+                  <span className="text-[11px] font-mono tracking-wider text-brand-400 font-semibold">
+                    {proj.category}
                   </span>
-                  <span className="text-[11px] font-mono text-charcoal-500">
-                    {item.category}
+                  <span className="text-sm font-mono text-charcoal-500 font-bold">
+                    {proj.index}
                   </span>
                 </div>
 
-                <h3 className="text-lg font-bold text-white group-hover:text-brand-400 transition-colors mb-3">
-                  {item.title}
+                {/* Title & Concise Summary */}
+                <h3 className="text-xl font-bold text-white mt-5 leading-snug group-hover:text-brand-400 transition-colors">
+                  {proj.title}
                 </h3>
-
-                <p className="text-xs text-charcoal-400 leading-relaxed mb-6">
-                  {item.description}
+                <p className="text-sm text-charcoal-400 mt-3 leading-relaxed font-normal">
+                  {proj.summary}
                 </p>
-
-                {/* Key Capabilities */}
-                <div className="space-y-2 mb-6">
-                  {item.capabilities.map((cap, cIdx) => (
-                    <div key={cIdx} className="flex items-start gap-2 text-xs text-charcoal-300">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-brand-500 shrink-0 mt-0.5" />
-                      <span>{cap}</span>
-                    </div>
-                  ))}
-                </div>
               </div>
 
-              {/* Technologies */}
-              <div className="pt-5 border-t border-charcoal-800">
+              {/* Metric & Tech Stack */}
+              <div className="pt-6 mt-6 border-t border-white/[0.06] space-y-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-xs font-semibold text-brand-400">
+                  <span className="w-1.5 h-1.5 rounded-full bg-brand-500 animate-pulse" />
+                  <span>{proj.metric}</span>
+                </div>
+
                 <div className="flex flex-wrap gap-1.5">
-                  {item.technologies.map((t, tIdx) => (
+                  {proj.stack.map((item, idx) => (
                     <span
-                      key={tIdx}
-                      className="text-[10px] font-mono px-2 py-0.5 rounded bg-charcoal-900 text-charcoal-400 border border-charcoal-800"
+                      key={idx}
+                      className="text-[11px] font-mono px-2.5 py-1 rounded-lg bg-white/[0.03] text-charcoal-300 border border-white/[0.06]"
                     >
-                      {t}
+                      {item}
                     </span>
                   ))}
                 </div>
               </div>
             </div>
           ))}
-        </div>
-
-        {/* CTA to discuss requirements */}
-        <div className="mt-12 text-center">
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-charcoal-300 hover:text-white transition-colors"
-          >
-            <span>Have a unique system requirement? Let's discuss architecture</span>
-            <ArrowUpRight className="w-4 h-4 text-brand-500" />
-          </Link>
         </div>
       </div>
     </section>

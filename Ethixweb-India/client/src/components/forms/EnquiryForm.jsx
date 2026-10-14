@@ -120,16 +120,16 @@ export default function EnquiryForm({
   };
 
   return (
-    <div className="rounded-3xl bg-charcoal-900 border border-charcoal-800 p-8 sm:p-10 shadow-2xl relative overflow-hidden">
-      <div className="mb-8">
-        <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-500 mb-2">
-          <span className="w-1.5 h-1.5 rounded-full bg-brand-500" />
-          <span>Project Scoping</span>
+    <div className="studio-card rounded-3xl p-7 sm:p-10 relative overflow-hidden">
+      <div className="mb-7">
+        <div className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-brand-500 mb-2">
+          <span className="w-1.5 h-1.5 rounded-full bg-brand-500 animate-pulse" />
+          <span>Project Scoping & Estimate</span>
         </div>
-        <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+        <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
           {title}
         </h3>
-        <p className="text-sm text-charcoal-400 mt-2 leading-relaxed">
+        <p className="text-xs sm:text-sm text-charcoal-400 mt-2 leading-relaxed">
           {subtitle}
         </p>
       </div>
@@ -138,12 +138,12 @@ export default function EnquiryForm({
       {serverSuccess && (
         <div
           role="status"
-          className="mb-8 p-5 rounded-2xl bg-emerald-950/60 border border-emerald-800/80 text-emerald-200 text-sm flex items-start gap-3.5"
+          className="mb-7 p-4 sm:p-5 rounded-2xl bg-emerald-950/40 border border-emerald-500/30 text-emerald-200 text-xs sm:text-sm flex items-start gap-3.5 backdrop-blur-sm"
         >
           <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
           <div>
-            <span className="font-bold block text-white">Inquiry Recorded</span>
-            <span className="text-xs text-emerald-300 leading-relaxed">{serverSuccess}</span>
+            <span className="font-bold block text-white text-sm">Inquiry Received</span>
+            <span className="text-xs text-emerald-300/90 leading-relaxed">{serverSuccess}</span>
           </div>
         </div>
       )}
@@ -151,12 +151,12 @@ export default function EnquiryForm({
       {serverError && (
         <div
           role="alert"
-          className="mb-8 p-5 rounded-2xl bg-red-950/60 border border-red-800/80 text-red-200 text-sm flex items-start gap-3.5"
+          className="mb-7 p-4 sm:p-5 rounded-2xl bg-red-950/40 border border-brand-500/30 text-red-200 text-xs sm:text-sm flex items-start gap-3.5 backdrop-blur-sm"
         >
           <AlertCircle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
           <div>
-            <span className="font-bold block text-white">Submission Issue</span>
-            <span className="text-xs text-red-300 leading-relaxed">{serverError}</span>
+            <span className="font-bold block text-white text-sm">Submission Issue</span>
+            <span className="text-xs text-red-300/90 leading-relaxed">{serverError}</span>
           </div>
         </div>
       )}
@@ -179,7 +179,7 @@ export default function EnquiryForm({
           <div>
             <label
               htmlFor="enquiry-name"
-              className="block text-xs font-bold uppercase tracking-wider text-charcoal-300 mb-2"
+              className="block text-xs font-semibold text-charcoal-300 mb-1.5"
             >
               Full Name <span className="text-brand-500">*</span>
             </label>
@@ -193,10 +193,10 @@ export default function EnquiryForm({
               value={formData.name}
               onChange={handleChange}
               placeholder="e.g. Vikram Sharma"
-              className={`w-full px-4 py-3 rounded-xl bg-charcoal-950 border text-sm text-white placeholder-charcoal-600 focus:outline-none focus:ring-2 transition-all ${
+              className={`w-full px-4 py-3 rounded-xl bg-white/[0.03] border text-xs sm:text-sm text-white placeholder-charcoal-500 focus:outline-none transition-all ${
                 fieldErrors.name
-                  ? 'border-brand-500 focus:ring-brand-500'
-                  : 'border-charcoal-800 focus:border-brand-500/80 focus:ring-brand-500/30'
+                  ? 'border-brand-500/80 focus:ring-2 focus:ring-brand-500/25'
+                  : 'border-white/[0.08] hover:border-white/[0.14] focus:border-brand-500/70 focus:ring-2 focus:ring-brand-500/15'
               }`}
             />
             {fieldErrors.name && (
@@ -210,7 +210,7 @@ export default function EnquiryForm({
           <div>
             <label
               htmlFor="enquiry-email"
-              className="block text-xs font-bold uppercase tracking-wider text-charcoal-300 mb-2"
+              className="block text-xs font-semibold text-charcoal-300 mb-1.5"
             >
               Business Email <span className="text-brand-500">*</span>
             </label>
@@ -224,10 +224,10 @@ export default function EnquiryForm({
               value={formData.email}
               onChange={handleChange}
               placeholder="e.g. vikram@startup.in"
-              className={`w-full px-4 py-3 rounded-xl bg-charcoal-950 border text-sm text-white placeholder-charcoal-600 focus:outline-none focus:ring-2 transition-all ${
+              className={`w-full px-4 py-3 rounded-xl bg-white/[0.03] border text-xs sm:text-sm text-white placeholder-charcoal-500 focus:outline-none transition-all ${
                 fieldErrors.email
-                  ? 'border-brand-500 focus:ring-brand-500'
-                  : 'border-charcoal-800 focus:border-brand-500/80 focus:ring-brand-500/30'
+                  ? 'border-brand-500/80 focus:ring-2 focus:ring-brand-500/25'
+                  : 'border-white/[0.08] hover:border-white/[0.14] focus:border-brand-500/70 focus:ring-2 focus:ring-brand-500/15'
               }`}
             />
             {fieldErrors.email && (
@@ -243,9 +243,9 @@ export default function EnquiryForm({
           <div>
             <label
               htmlFor="enquiry-phone"
-              className="block text-xs font-bold uppercase tracking-wider text-charcoal-300 mb-2"
+              className="block text-xs font-semibold text-charcoal-300 mb-1.5"
             >
-              Phone / WhatsApp <span className="text-charcoal-500 font-normal lowercase">(optional)</span>
+              Phone / WhatsApp <span className="text-charcoal-500 font-normal">(optional)</span>
             </label>
             <input
               id="enquiry-phone"
@@ -254,10 +254,10 @@ export default function EnquiryForm({
               value={formData.phone}
               onChange={handleChange}
               placeholder="e.g. +91 98765 43210"
-              className={`w-full px-4 py-3 rounded-xl bg-charcoal-950 border text-sm text-white placeholder-charcoal-600 focus:outline-none focus:ring-2 transition-all ${
+              className={`w-full px-4 py-3 rounded-xl bg-white/[0.03] border text-xs sm:text-sm text-white placeholder-charcoal-500 focus:outline-none transition-all ${
                 fieldErrors.phone
-                  ? 'border-brand-500 focus:ring-brand-500'
-                  : 'border-charcoal-800 focus:border-brand-500/80 focus:ring-brand-500/30'
+                  ? 'border-brand-500/80 focus:ring-2 focus:ring-brand-500/25'
+                  : 'border-white/[0.08] hover:border-white/[0.14] focus:border-brand-500/70 focus:ring-2 focus:ring-brand-500/15'
               }`}
             />
             {fieldErrors.phone && (
@@ -271,9 +271,9 @@ export default function EnquiryForm({
           <div>
             <label
               htmlFor="enquiry-company"
-              className="block text-xs font-bold uppercase tracking-wider text-charcoal-300 mb-2"
+              className="block text-xs font-semibold text-charcoal-300 mb-1.5"
             >
-              Company / Venture <span className="text-charcoal-500 font-normal lowercase">(optional)</span>
+              Company / Venture <span className="text-charcoal-500 font-normal">(optional)</span>
             </label>
             <input
               id="enquiry-company"
@@ -282,7 +282,7 @@ export default function EnquiryForm({
               value={formData.company}
               onChange={handleChange}
               placeholder="e.g. Acme Tech Solutions"
-              className="w-full px-4 py-3 rounded-xl bg-charcoal-950 border border-charcoal-800 text-sm text-white placeholder-charcoal-600 focus:outline-none focus:border-brand-500/80 focus:ring-2 focus:ring-brand-500/30 transition-all"
+              className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/[0.08] hover:border-white/[0.14] text-xs sm:text-sm text-white placeholder-charcoal-500 focus:outline-none focus:border-brand-500/70 focus:ring-2 focus:ring-brand-500/15 transition-all"
             />
           </div>
         </div>
@@ -291,7 +291,7 @@ export default function EnquiryForm({
         <div>
           <label
             htmlFor="enquiry-service"
-            className="block text-xs font-bold uppercase tracking-wider text-charcoal-300 mb-2"
+            className="block text-xs font-semibold text-charcoal-300 mb-1.5"
           >
             Service Interest <span className="text-brand-500">*</span>
           </label>
@@ -300,10 +300,10 @@ export default function EnquiryForm({
             name="service"
             value={formData.service}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-xl bg-charcoal-950 border border-charcoal-800 text-sm text-white focus:outline-none focus:border-brand-500/80 focus:ring-2 focus:ring-brand-500/30 transition-all cursor-pointer"
+            className="w-full px-4 py-3 rounded-xl bg-[#14151a] border border-white/[0.08] hover:border-white/[0.14] text-xs sm:text-sm text-white focus:outline-none focus:border-brand-500/70 focus:ring-2 focus:ring-brand-500/15 transition-all cursor-pointer"
           >
             {AVAILABLE_SERVICES.map((srv) => (
-              <option key={srv} value={srv} className="bg-charcoal-900 text-white">
+              <option key={srv} value={srv} className="bg-[#14151a] text-white">
                 {srv}
               </option>
             ))}
@@ -314,7 +314,7 @@ export default function EnquiryForm({
         <div>
           <label
             htmlFor="enquiry-message"
-            className="block text-xs font-bold uppercase tracking-wider text-charcoal-300 mb-2"
+            className="block text-xs font-semibold text-charcoal-300 mb-1.5"
           >
             Project Scope or Requirements <span className="text-brand-500">*</span>
           </label>
@@ -328,10 +328,10 @@ export default function EnquiryForm({
             value={formData.message}
             onChange={handleChange}
             placeholder="Outline your timeline, goals, or existing technical stack..."
-            className={`w-full px-4 py-3 rounded-xl bg-charcoal-950 border text-sm text-white placeholder-charcoal-600 focus:outline-none focus:ring-2 transition-all resize-none ${
+            className={`w-full px-4 py-3 rounded-xl bg-white/[0.03] border text-xs sm:text-sm text-white placeholder-charcoal-500 focus:outline-none transition-all resize-none ${
               fieldErrors.message
-                ? 'border-brand-500 focus:ring-brand-500'
-                : 'border-charcoal-800 focus:border-brand-500/80 focus:ring-brand-500/30'
+                ? 'border-brand-500/80 focus:ring-2 focus:ring-brand-500/25'
+                : 'border-white/[0.08] hover:border-white/[0.14] focus:border-brand-500/70 focus:ring-2 focus:ring-brand-500/15'
             }`}
           />
           {fieldErrors.message && (
@@ -346,7 +346,7 @@ export default function EnquiryForm({
           type="submit"
           disabled={loading}
           onClick={triggerParticleBurst}
-          className="relative overflow-hidden w-full py-4 px-6 rounded-xl font-bold uppercase tracking-wider text-xs text-white bg-brand-500 hover:bg-brand-600 shadow-xl shadow-brand-500/25 transition-all flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed active:scale-[0.99]"
+          className="relative overflow-hidden w-full py-4 px-6 rounded-2xl font-bold uppercase tracking-wider text-xs text-white bg-brand-500 hover:bg-brand-600 shadow-xl shadow-brand-500/20 transition-all flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed active:scale-[0.99] cursor-pointer"
         >
           {loading ? (
             <>
@@ -362,7 +362,7 @@ export default function EnquiryForm({
         </button>
 
         <p className="text-[11px] text-charcoal-500 text-center pt-2">
-          Directly writes to our secure MongoDB Atlas CRM. We never sell contact information.
+          Submissions write directly to our secure MongoDB Atlas CRM. We never sell contact information.
         </p>
       </form>
     </div>

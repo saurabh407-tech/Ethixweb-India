@@ -72,14 +72,14 @@ export default function About() {
               <Link
                 to="/contact"
                 onClick={triggerParticleBurst}
-                className="group relative inline-flex items-center gap-2 px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-wider text-charcoal-950 bg-white hover:bg-brand-500 hover:text-white transition-all shadow-lg active:scale-95 overflow-hidden"
+                className="group relative inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider text-charcoal-950 bg-white hover:bg-brand-500 hover:text-white transition-all shadow-lg active:scale-95 overflow-hidden"
               >
                 <span>Start a project</span>
                 <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
               <Link
                 to="/services"
-                className="text-xs font-semibold text-charcoal-400 hover:text-white px-3 py-2 transition-colors"
+                className="text-xs font-semibold text-charcoal-400 hover:text-white px-4 py-3 rounded-full hover:bg-white/[0.04] transition-colors"
               >
                 Explore Capabilities &rarr;
               </Link>
@@ -89,12 +89,12 @@ export default function About() {
       </section>
 
       {/* Section 02: Our Working Standard (Crisp 3-Column Minimal Editorial) */}
-      <section className="py-20 bg-charcoal-900/60 border-t border-charcoal-850">
+      <section className="py-20 border-t border-white/[0.06]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-14 space-y-2">
             <div className="text-2xl font-mono font-bold text-brand-500/80">02</div>
             <div className="w-12 h-0.5 bg-brand-500/40 rounded-full" />
-            <div className="text-xs font-bold uppercase tracking-widest text-brand-500 pt-1">
+            <div className="text-xs font-mono font-bold uppercase tracking-widest text-brand-500 pt-1">
               Working Standard
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight pt-1">
@@ -102,27 +102,27 @@ export default function About() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-2xl bg-charcoal-950 border border-charcoal-800/80 space-y-3">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="studio-card rounded-3xl p-8 space-y-3">
               <div className="text-xs font-mono font-bold text-brand-500">01 / HONESTY</div>
-              <h3 className="text-lg font-bold text-white">Technical Directness</h3>
-              <p className="text-sm text-charcoal-400 leading-relaxed">
+              <h3 className="text-base font-bold text-white">Technical Directness</h3>
+              <p className="text-xs sm:text-sm text-charcoal-400 leading-relaxed">
                 If an existing off-the-shelf tool solves your problem better than custom engineering, we tell you candidly before a single rupee is spent.
               </p>
             </div>
 
-            <div className="p-8 rounded-2xl bg-charcoal-950 border border-charcoal-800/80 space-y-3">
+            <div className="studio-card rounded-3xl p-8 space-y-3">
               <div className="text-xs font-mono font-bold text-brand-500">02 / OWNERSHIP</div>
-              <h3 className="text-lg font-bold text-white">100% Code & IP Freedom</h3>
-              <p className="text-sm text-charcoal-400 leading-relaxed">
+              <h3 className="text-base font-bold text-white">100% Code & IP Freedom</h3>
+              <p className="text-xs sm:text-sm text-charcoal-400 leading-relaxed">
                 You hold complete ownership of all source code, database architectures, and deployment keys. No proprietary traps or vendor lock-in.
               </p>
             </div>
 
-            <div className="p-8 rounded-2xl bg-charcoal-950 border border-charcoal-800/80 space-y-3">
+            <div className="studio-card rounded-3xl p-8 space-y-3">
               <div className="text-xs font-mono font-bold text-brand-500">03 / VELOCITY</div>
-              <h3 className="text-lg font-bold text-white">Senior Hands-On Craft</h3>
-              <p className="text-sm text-charcoal-400 leading-relaxed">
+              <h3 className="text-base font-bold text-white">Senior Hands-On Craft</h3>
+              <p className="text-xs sm:text-sm text-charcoal-400 leading-relaxed">
                 Every milestone is architected and built by experienced specialists. You get production-grade systems that run reliably day and night.
               </p>
             </div>
@@ -131,10 +131,10 @@ export default function About() {
       </section>
 
       {/* Production Technology Stack */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-charcoal-850">
+      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-white/[0.06]">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
           <div>
-            <div className="text-xs font-bold uppercase tracking-widest text-brand-500 mb-1">
+            <div className="text-xs font-mono font-bold uppercase tracking-widest text-brand-500 mb-1">
               Production Stack
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
@@ -157,7 +157,7 @@ export default function About() {
           ].map((item, idx) => (
             <div
               key={idx}
-              className="p-4 rounded-xl bg-charcoal-900/80 border border-charcoal-800/80 text-center hover:border-brand-500/40 transition-colors"
+              className="p-4 rounded-2xl studio-card text-center hover:border-brand-500/40 transition-colors"
             >
               <div className="text-sm font-bold text-white">{item.name}</div>
               <div className="text-[11px] font-mono text-brand-400 mt-1">{item.role}</div>

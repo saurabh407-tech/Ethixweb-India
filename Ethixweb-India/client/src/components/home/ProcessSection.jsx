@@ -1,96 +1,69 @@
 import React from 'react';
-import { Search, Compass, Cpu, CheckSquare2, Radio } from 'lucide-react';
+import { Search, Compass, Cpu, CheckCircle2 } from 'lucide-react';
 
-const WORKFLOW = [
+const STEPS = [
   {
-    step: '01',
-    icon: Search,
-    title: 'Audit & Scope Analysis',
-    description:
-      'We review your existing tech bottlenecks, user flows, conversion funnels, and infrastructure dependencies to define a high-clarity scope.',
+    num: '01',
+    title: 'Scope & Architecture',
+    desc: 'We map data schemas, user flows, and API boundaries before writing code. You get fixed-scope clarity with zero surprises.',
   },
   {
-    step: '02',
-    icon: Compass,
-    title: 'Architecture Blueprint',
-    description:
-      'We draft the technical roadmap—component structure, database schema, API contracts, and integration points—before writing a single line of code.',
-  },
-  {
-    step: '03',
-    icon: Cpu,
+    num: '02',
     title: 'Sprint-Based Execution',
-    description:
-      'Development proceeds in structured 2-week milestones with continuous deployment previews. You see real, clickable progress every sprint.',
+    desc: 'Structured 2-week milestones with live preview deployments. You see real, clickable progress throughout every phase.',
   },
   {
-    step: '04',
-    icon: CheckSquare2,
-    title: 'Quality & Security Audit',
-    description:
-      'Rigorous cross-browser testing, mobile responsiveness checks, input validation testing, and load evaluation prior to cutover.',
+    num: '03',
+    title: 'Security & Quality Audit',
+    desc: 'Cross-browser testing, input sanitization, rate-limiting verification, and Core Web Vitals optimization.',
   },
   {
-    step: '05',
-    icon: Radio,
-    title: 'Live Launch & Operations',
-    description:
-      'Zero-downtime production deployment, DNS configuration, search console indexing, and proactive monitoring to ensure uninterrupted uptime.',
+    num: '04',
+    title: 'Deployment & SLA Care',
+    desc: 'Zero-downtime production cutover, DNS routing, and ongoing server health monitoring for peace of mind.',
   },
 ];
 
 export default function ProcessSection() {
   return (
-    <section className="py-24 bg-charcoal-950 text-white relative overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-72 h-72 bg-brand-500/5 rounded-full blur-3xl pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-3xl mb-16">
-          <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-500 mb-3">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-500" />
-            <span>The Operating Model</span>
+    <section className="py-24 bg-charcoal-900/60 border-t border-charcoal-850 text-white relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-2xl mb-16 space-y-2">
+          <div className="text-xs font-mono font-bold uppercase tracking-widest text-brand-500">
+            Working Standard
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
-            How we take your project from scope to scale.
+            How we take software from scope to scale.
           </h2>
-          <p className="mt-4 text-base text-charcoal-400 leading-relaxed">
-            A transparent, sprint-driven workflow designed to eliminate guesswork, control delivery timelines, and keep communication clear.
+          <p className="text-sm text-charcoal-400 pt-1 leading-relaxed">
+            A sprint-driven operating model that eliminates agency bloat and delivers production-grade software on schedule.
           </p>
         </div>
 
-        {/* 5-Step Process Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5">
-          {WORKFLOW.map((item, idx) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={idx}
-                className="group relative rounded-2xl bg-charcoal-900/90 border border-charcoal-800 p-6 flex flex-col justify-between hover:border-brand-500/40 hover:bg-charcoal-900 transition-all duration-300"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-6">
-                    <span className="font-mono text-2xl font-black text-brand-500/90">
-                      {item.step}
-                    </span>
-                    <div className="w-8 h-8 rounded-lg bg-charcoal-800 text-charcoal-300 flex items-center justify-center group-hover:text-white group-hover:bg-brand-500/20 transition-colors">
-                      <Icon className="w-4 h-4" />
-                    </div>
-                  </div>
-                  <h3 className="font-bold text-base text-white mb-2.5">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs text-charcoal-400 leading-relaxed">
-                    {item.description}
-                  </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {STEPS.map((s) => (
+            <div
+              key={s.num}
+              className="studio-card rounded-3xl p-7 flex flex-col justify-between group"
+            >
+              <div>
+                <div className="text-2xl font-mono font-bold text-brand-500/80 mb-4">
+                  {s.num}
                 </div>
-
-                <div className="pt-4 mt-6 border-t border-charcoal-800 text-[10px] uppercase font-mono text-charcoal-500">
-                  Phase {item.step} Protocol
-                </div>
+                <h3 className="text-lg font-bold text-white group-hover:text-brand-400 transition-colors">
+                  {s.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-charcoal-400 mt-2.5 leading-relaxed font-normal">
+                  {s.desc}
+                </p>
               </div>
-            );
-          })}
+
+              <div className="pt-5 mt-5 border-t border-white/[0.06] flex items-center gap-1.5 text-[11px] font-mono text-charcoal-500">
+                <CheckCircle2 className="w-3 h-3 text-brand-500/60" />
+                <span>Verified Milestone</span>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
