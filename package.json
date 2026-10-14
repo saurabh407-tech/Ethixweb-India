@@ -1,0 +1,14 @@
+{
+  "name": "ethixweb-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Ethixweb India Workspace Runner",
+  "scripts": {
+    "install:all": "npm install --prefix Ethixweb-India/client && npm install --prefix Ethixweb-India/server",
+    "dev:server": "npm run dev --prefix Ethixweb-India/server",
+    "dev:client": "npm run dev --prefix Ethixweb-India/client",
+    "start:server": "npm run start --prefix Ethixweb-India/server",
+    "seed": "npm run seed --prefix Ethixweb-India/server",
+    "build:client": "npm run build --prefix Ethixweb-India/client"
+  }
+}

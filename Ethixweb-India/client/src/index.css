@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    background-color: #0c0d10;
+    color: #f8f9fa;
+  }
+}
+
+@layer utilities {
+  .text-glow-brand {
+    text-shadow: 0 0 20px rgba(229, 29, 37, 0.45);
+  }
+  
+  .box-glow-brand {
+    box-shadow: 0 0 35px -5px rgba(229, 29, 37, 0.25);
+  }
+}
