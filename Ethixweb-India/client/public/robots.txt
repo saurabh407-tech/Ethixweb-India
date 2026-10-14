@@ -1,0 +1,9 @@
+# Ethixweb India Robots Configuration
+User-agent: *
+Disallow: /admin
+Disallow: /admin/
+Disallow: /admin/*
+Disallow: /api/
+Allow: /
+
+Sitemap: https://ethixweb.vercel.app/sitemap.xml

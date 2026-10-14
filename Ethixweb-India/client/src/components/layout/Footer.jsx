@@ -17,7 +17,9 @@ export default function Footer() {
                 src="/assets/ethixweb-logo-text.webp"
                 alt="Ethixweb"
                 width="150"
-                height="24"
+                height="28"
+                loading="lazy"
+                decoding="async"
                 className="h-7 w-auto object-contain transition-transform group-hover:scale-105"
                 onError={(e) => {
                   e.target.style.display = 'none';
@@ -25,7 +27,15 @@ export default function Footer() {
                 }}
               />
               <div className="hidden items-center gap-2">
-                <img src="/ethixweb.png" alt="Ethixweb" className="w-7 h-7 object-contain" />
+                <img
+                  src="/ethixweb.png"
+                  alt="Ethixweb"
+                  width="28"
+                  height="28"
+                  loading="lazy"
+                  decoding="async"
+                  className="w-7 h-7 object-contain"
+                />
                 <span className="text-xl font-bold tracking-tight text-white">
                   ETHIXWEB<span className="text-brand-500">.</span>
                 </span>

@@ -10,6 +10,10 @@ export default function Hero() {
         <img
           src="/assets/spiderweb.svg"
           alt=""
+          width="1152"
+          height="600"
+          aria-hidden="true"
+          decoding="async"
           className="w-full max-w-6xl h-auto object-contain transform scale-110 lg:scale-125"
           onError={(e) => {
             e.target.style.display = 'none';
@@ -100,7 +104,14 @@ export default function Hero() {
                     <div className="w-3 h-3 rounded-full bg-charcoal-700" />
                   </div>
                   <div className="flex items-center gap-2">
-                    <img src="/ethixweb.png" alt="Ethixweb" className="w-5 h-5 object-contain" />
+                    <img
+                      src="/ethixweb.png"
+                      alt="Ethixweb"
+                      width="20"
+                      height="20"
+                      decoding="async"
+                      className="w-5 h-5 object-contain"
+                    />
                     <span className="text-[11px] font-mono text-charcoal-400">ethixweb-core::v2</span>
                   </div>
                 </div>

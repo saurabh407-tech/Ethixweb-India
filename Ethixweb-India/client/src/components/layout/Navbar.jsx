@@ -50,6 +50,8 @@ export default function Navbar() {
               alt="Ethixweb"
               width="150"
               height="24"
+              decoding="async"
+              fetchPriority="high"
               className="h-6 sm:h-7 w-auto object-contain transition-transform group-hover:scale-105"
               onError={(e) => {
                 // Fallback to text & emblem if webp isn't loaded
@@ -58,7 +60,14 @@ export default function Navbar() {
               }}
             />
             <div className="hidden items-center gap-2">
-              <img src="/ethixweb.png" alt="Ethixweb Emblem" className="w-7 h-7 object-contain" />
+              <img
+                src="/ethixweb.png"
+                alt="Ethixweb Emblem"
+                width="28"
+                height="28"
+                decoding="async"
+                className="w-7 h-7 object-contain"
+              />
               <span className="text-lg font-extrabold tracking-tight text-white">
                 ETHIXWEB<span className="text-brand-500">.</span>
               </span>

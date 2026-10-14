@@ -41,6 +41,17 @@ export default function AdminDashboard() {
 
   useEffect(() => {
     document.title = 'Admin CRM Dashboard | Ethixweb India';
+    let robotsMeta = document.querySelector('meta[name="robots"]');
+    if (!robotsMeta) {
+      robotsMeta = document.createElement('meta');
+      robotsMeta.name = 'robots';
+      document.head.appendChild(robotsMeta);
+    }
+    robotsMeta.content = 'noindex, nofollow';
+
+    return () => {
+      if (robotsMeta) robotsMeta.content = 'index, follow';
+    };
   }, []);
 
   const fetchData = async () => {

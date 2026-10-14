@@ -12,9 +12,21 @@ export default function AdminLogin() {
 
   useEffect(() => {
     document.title = 'Admin Portal Authentication | Ethixweb India';
+    let robotsMeta = document.querySelector('meta[name="robots"]');
+    if (!robotsMeta) {
+      robotsMeta = document.createElement('meta');
+      robotsMeta.name = 'robots';
+      document.head.appendChild(robotsMeta);
+    }
+    robotsMeta.content = 'noindex, nofollow';
+
     if (authService.isAuthenticated()) {
       navigate('/admin/dashboard', { replace: true });
     }
+
+    return () => {
+      if (robotsMeta) robotsMeta.content = 'index, follow';
+    };
   }, [navigate]);
 
   const handleLogin = async (e) => {
@@ -41,6 +53,8 @@ export default function AdminLogin() {
             <img
               src="/assets/ethixweb-logo-text.webp"
               alt="Ethixweb"
+              width="150"
+              height="28"
               className="h-7 w-auto mx-auto object-contain transition-transform group-hover:scale-105"
               onError={(e) => {
                 e.target.style.display = 'none';
